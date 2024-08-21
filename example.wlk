@@ -1,6 +1,6 @@
 object pepita {
 	var energia = 100 //Tiene que quedar en 100
-
+ 
 
 	method comer(comida) {
 		energia = energia + comida.energiaQueAporta()
