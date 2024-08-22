@@ -1,15 +1,18 @@
 object pepita {
-	var energia = 100 //Tiene que quedar en 100
+	var energia = 100
  
-
+	//Orden
 	method comer(comida) {
 		energia = energia + comida.energiaQueAporta()
 	}
 	
+	//Orden
 	method volar(distancia) {
 		energia = energia - 10 - distancia
+		
 	}
 	
+	//Getter / Consulta
 	method energia() {
 		return energia
 	}
@@ -25,16 +28,18 @@ object manzana {
 	var madurez = 1
 	const base = 5
 	
+	//Getter
 	method madurez() {
 		return madurez
 	}
 	
+	//Setter
 	method madurez(_madurez) {
 		madurez = _madurez
 	}
 	
 	method madurar() {
-		self.madurez(madurez + 1)
+		madurez += 1
 	}
 	
 	method energiaQueAporta() {
@@ -44,5 +49,5 @@ object manzana {
 }
 
 object pepon{
-	
+
 }
