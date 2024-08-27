@@ -2,11 +2,15 @@ import pepita.*
 
 describe "Test Pepita, Pepo y Roque" {
   
+  method initialize(){
+    //Irian acciones que se van a realizar antes de cada test siempre.
+  }
+
   test "pepita comienza con 100, al volar 10 su energia desciende a 80, al comer alpiste recupera 20" {
-    assert.equals(100, pepita.energia())
+    assert.equals(100, pepita.energia()) //Se comprueba la energia incial dada por enunciado, luego ya no es necesario en subsecuentes test!
     
-    pepita.volar(10)
-    assert.equals( 80, pepita.energia())
+    pepita.volar(10) //Se realiza la orden a comprobar
+    assert.equals(80, pepita.energia()) //Se comprueba que se cambio satisfactoriamente la energia.
     
     pepita.comer(alpiste)
     assert.equals(100, pepita.energia())
@@ -30,8 +34,8 @@ describe "Test Pepita, Pepo y Roque" {
     assert.equals(10, pepon.energia())
   }
   
-  test "roque con 0 cenas, al comenzar con pepita y alimentar 2 veces alpiste pepita pasa a tener 140 de energia, 
-     y cenas pasa a 2, al cambiar a pepon cenas es 0" {
+  test "roque empieza con 0 cenas y pepita. Al alimentar 2 veces alpiste, pepita pasa a tener 140 de energia, 
+     y cenas queda en 2. Al cambiar a pepon cenas es 0" {
     assert.equals(0, roque.cenas())
 
     roque.alimentar(alpiste)
