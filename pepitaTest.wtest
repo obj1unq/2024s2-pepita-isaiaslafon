@@ -1,0 +1,42 @@
+import pepita.*
+describe "Test Pepita, Pepo y Roque" {
+  test "pepita comienza con 100, al volar 10 su energia desciende a 80, al comer alpiste recupera 20" {
+    assert.equals(100, pepita.energia())
+    
+    pepita.volar(10)
+    assert.equals( 80, pepita.energia())
+    
+    pepita.comer(alpiste)
+    assert.equals(100, pepita.energia())
+  }
+  test "alpiste aporta 20, manzana madurez 1 aporta 5, al madurar una vez 10" {
+    assert.equals(20, alpiste.energiaQueAporta())
+    assert.equals( 5, manzana.energiaQueAporta())
+
+    manzana.madurar()
+    assert.equals(10, manzana.energiaQueAporta())
+  }
+  test "pepon con energia 30, al comer alpiste su energia queda en 40, al volar 5 su energia queda en 10" {
+    assert.equals(30, pepon.energia())
+    
+    pepon.comer(alpiste)
+    assert.equals(40, pepon.energia())
+    
+    pepon.volar(5)
+    assert.equals(10, pepon.energia())
+  }
+  test "roque con 0 cenas, al comenzar con pepita y alimentar 2 veces alpiste pepita pasa a tener 140 de energia, 
+     y cenas pasa a 2, al cambiar a pepon cenas es 0" {
+    assert.equals(0, roque.cenas())
+
+    roque.alimentar(alpiste)
+    roque.alimentar(alpiste)
+    assert.equals(140, pepita.energia())
+    assert.equals(  2,    roque.cenas())
+  
+    roque.ave(pepon)
+    assert.equals(0, roque.cenas())
+  }
+
+ 
+}
